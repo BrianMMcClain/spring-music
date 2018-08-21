@@ -1,0 +1,26 @@
+resources:
+- name: spring-music-app
+  type: git
+  source:
+    uri: https://github.com/BrianMMcClain/spring-music.git
+    branch: master
+- name: app-deploy
+  type: cf
+  source:
+    api: {{cf-api}}
+    username: {{cf-username}}
+    password: {{cf-password}}
+    organization: {{cf-org}}
+    space: {{cf-space}}
+    skip_cert_check: true
+
+jobs:
+- name: build
+  plan:
+  - get: spring-music-app
+    trigger: true
+  - task: tests
+    file: spring-music-app/build.yml
+  - put: app-deploy
+    params:
+      manifest: ./spring-music-app/manifest.yml

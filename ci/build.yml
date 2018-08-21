@@ -1,0 +1,13 @@
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: gradle/4.9.0-jdk7-alpine
+    tag: latest
+
+inputs:
+- name: spring-music-app
+
+run:
+  path: ./spring-music-app/ci/build.sh
