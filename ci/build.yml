@@ -4,7 +4,7 @@ image_resource:
   type: docker-image
   source:
     repository: gradle
-    tag: 4.9.0-jdk7-alpine
+    tag: jdk7
 
 inputs:
 - name: spring-music-app
