@@ -20,7 +20,7 @@ jobs:
   - get: spring-music-app
     trigger: true
   - task: tests
-    file: spring-music-app/build.yml
+    file: spring-music-app/ci/build.yml
   - put: app-deploy
     params:
       manifest: ./spring-music-app/manifest.yml
