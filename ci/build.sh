@@ -5,4 +5,4 @@ export TERM=${TERM:-dumb}
 
 cd spring-music-app
 ./gradlew --no-daemon clean assemble 
-cp ./build/libs/*.jar ../build-output/
+#cp ./build/libs/*.jar ../build-output/
