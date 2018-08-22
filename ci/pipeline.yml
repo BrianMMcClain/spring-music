@@ -19,7 +19,7 @@ jobs:
   plan:
   - get: spring-music-app
     trigger: true
-  - task: tests
+  - task: buld-jar
     file: spring-music-app/ci/build.yml
   - put: app-deploy
     params:
